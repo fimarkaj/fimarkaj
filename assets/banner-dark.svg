@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="fimarkaj — student and aspiring Forward Deployed Engineer">
+  <style>
+    .title { font: 700 76px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #e6edf3; letter-spacing: -2px; }
+    .sub   { font: 500 26px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #c9d1d9; }
+    .mono  { font: 500 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #8b949e; }
+    .tag   { font: 700 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #0d1117; }
+    .count { font: 700 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #ffb000; }
+    .live  { font: 700 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #e6edf3; }
+    .blink { animation: blink 1.6s ease-in-out infinite; }
+    .scan  { animation: scan 3.2s ease-in-out infinite; }
+    @keyframes blink { 0%,100% { opacity: 1 } 50% { opacity: .25 } }
+    @keyframes scan  { 0%,100% { opacity: 1 } 50% { opacity: .55 } }
+  </style>
+
+  <rect width="1200" height="320" rx="16" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="1199" height="319" rx="16" fill="none" stroke="#30363d"/>
+
+  <!-- left: text -->
+  <text x="64" y="92" class="mono">~/fimarkaj</text>
+  <text x="60" y="170" class="title">fimarkaj</text>
+  <text x="64" y="216" class="sub">Student · aspiring Forward Deployed Engineer</text>
+  <text x="64" y="256" class="mono">computer vision · civic AI · embedded</text>
+
+  <!-- right: top-down road with detection overlay -->
+  <clipPath id="road"><path d="M780 1 H1183 A16 16 0 0 1 1199 17 V303 A16 16 0 0 1 1183 319 H780 Z"/></clipPath>
+  <g clip-path="url(#road)">
+    <rect x="780" y="0" width="420" height="320" fill="#161b22"/>
+    <line x1="970" y1="-10" x2="970" y2="330" stroke="#484f58" stroke-width="4" stroke-dasharray="28 22"/>
+    <line x1="790" y1="0" x2="790" y2="320" stroke="#30363d" stroke-width="3"/>
+    <line x1="1190" y1="0" x2="1190" y2="320" stroke="#30363d" stroke-width="3"/>
+
+    <!-- lane occupancy zone -->
+    <polygon points="985,20 1176,20 1176,300 985,300" fill="#ffb000" fill-opacity="0.07" stroke="#ffb000" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="6 6"/>
+
+    <!-- counting line -->
+    <line x1="796" y1="262" x2="964" y2="262" stroke="#ffb000" stroke-width="2.5" stroke-dasharray="10 6"/>
+    <text x="806" y="290" class="count">↑ IN 128</text>
+
+    <!-- cars -->
+    <rect x="845" y="118" width="64" height="104" rx="14" fill="#30363d"/>
+    <rect x="853" y="134" width="48" height="22" rx="5" fill="#484f58"/>
+    <rect x="853" y="190" width="48" height="16" rx="5" fill="#484f58"/>
+
+    <rect x="1048" y="58" width="64" height="104" rx="14" fill="#30363d"/>
+    <rect x="1056" y="74" width="48" height="22" rx="5" fill="#484f58"/>
+    <rect x="1056" y="130" width="48" height="16" rx="5" fill="#484f58"/>
+
+    <rect x="1054" y="232" width="56" height="92" rx="13" fill="#30363d"/>
+    <rect x="1061" y="246" width="42" height="19" rx="5" fill="#484f58"/>
+
+    <!-- detection boxes -->
+    <g class="scan">
+      <rect x="835" y="108" width="84" height="124" rx="3" fill="none" stroke="#ffb000" stroke-width="2.5"/>
+      <rect x="835" y="86" width="104" height="22" fill="#ffb000"/>
+      <text x="842" y="102" class="tag">car 0.94 #17</text>
+
+      <rect x="1038" y="48" width="84" height="124" rx="3" fill="none" stroke="#ffb000" stroke-width="2.5"/>
+      <rect x="1038" y="26" width="104" height="22" fill="#ffb000"/>
+      <text x="1045" y="42" class="tag">car 0.91 #22</text>
+    </g>
+  </g>
+
+  <!-- live indicator -->
+  <circle cx="1140" cy="292" r="5" fill="#f85149" class="blink"/>
+  <text x="1150" y="297" class="live">LIVE</text>
+</svg>
